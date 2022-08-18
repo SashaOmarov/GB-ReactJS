@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.App-wrap{
+  display: flex;
+  flex-direction: row;
+}
+
 .App-message {
   color: black;
   background-color: #7291ce;
@@ -11,7 +16,7 @@
 
 .App-form {
   color: black;
-  background-color: #eb8679;
+  background-color: #ffffff;
   font-size: calc(10px + 2vmin);
   margin: 5px;
   padding: 10px;

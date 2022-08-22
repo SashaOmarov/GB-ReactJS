@@ -27,7 +27,6 @@ const MessageInput = props => {
                     onChange={event => setMsgText(event.target.value)}
                     label="Message"
                     margin="normal"
-                    autoFocus='true'
                 />
             </FormControl>
             <FormControl>

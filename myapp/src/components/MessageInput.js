@@ -1,11 +1,13 @@
 import {useState} from "react";
 import {Button, FormControl, InputLabel, OutlinedInput} from "@mui/material";
+import {useParams} from "react-router-dom";
 
 const MessageInput = props => {
 
     const [msgText, setMsgText] = useState('');
     const [fromUser, setFromUser] = useState('');
     const [toUser, setToUser] = useState(props.toUser);
+    const {chatId} = useParams();
 
     return (
         <div className={'App-form'}>
@@ -32,7 +34,8 @@ const MessageInput = props => {
             <FormControl>
                 <Button variant="contained"
                         onClick={() => {
-                            props.onChangeMessage({fromUser: fromUser, toUser: toUser, msgText: msgText})
+                            props.onChangeMessage({chatID:chatId, fromUser: fromUser, toUser: toUser, msgText: msgText});
+                            setMsgText('');
                         }}
                 >Send</Button>
             </FormControl>

@@ -5,7 +5,7 @@ import {useCallback} from "react";
 import {toggleShowNameAction} from "../store/profile/actions";
 
 export default function Profile() {
-    const {showName, name} = useSelector((state) => state);
+    const {showName, name} = useSelector((state) => state.profile);
     const dispatch = useDispatch();
 
     const setShowName = useCallback(() => {
@@ -32,7 +32,7 @@ export default function Profile() {
                     <span>Show Name</span>
                     {showName && <p><strong>{name}</strong></p>}
                 </div>
-                <p>-----------------</p>
+                <p>----------------</p>
             </main>
             <nav>
                 <Link to="/">Home</Link>

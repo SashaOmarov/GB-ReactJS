@@ -60,6 +60,12 @@
   margin: 40px 5%;
 }
 
+.chat-add {
+  font-size: calc(10px + 2vmin);
+  color: #173f8d;
+  cursor: pointer;
+}
+
 li {
   list-style-type: none;
   /* Убираем маркеры */

@@ -9,27 +9,21 @@ import Layout from "./components/Layout";
 import {Provider} from "react-redux";
 import store from "./store";
 
-const chatItemList = [
-    {id: '333', chatUser: 'Alex'},
-    {id: '444', chatUser: 'Ivan'},
-    {id: '555', chatUser: 'Pavel'},
-];
-
 function App() {
     return (
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo"/>
                 <p>
-                    My home work 5
+                    My home work 6
                 </p>
             </header>
             <Provider store={store}>
                 <Routes>
                     <Route path="/" element={<Layout/>}>
-                        <Route index element={<ChatList chatItemList={chatItemList}/>}/>
+                        <Route index element={<ChatList/>}/>
                         <Route path="profile" element={<Profile/>}/>
-                        <Route path="/chats/:id" element={<ChatView/>}/>
+                        <Route path="/chats/:chatId" element={<ChatView/>}/>
                         <Route path="*" element={<NoMatch/>}/>
                     </Route>
                 </Routes>

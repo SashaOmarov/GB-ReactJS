@@ -4,7 +4,7 @@ import IconButton from "@mui/material/IconButton";
 import ListItemText from "@mui/material/ListItemText";
 import {Avatar, Button, Dialog, DialogTitle, Link, TextField} from "@mui/material";
 import {useState} from "react";
-import store from "../store";
+import store, {persistor} from "../store";
 import {useSelector} from "react-redux";
 import chatsSlice from "../store/chatsSlice";
 
@@ -22,6 +22,10 @@ export default function ChatList() {
         handleClose();
     };
 
+    const onDelChat = (idd) => {
+        store.dispatch(chatsSlice.actions.delChat(idd));
+    };
+
     return (
         <div className="chat-list">
             <List sx={{width: '100%', maxWidth: 200, bgcolor: 'background.paper', justifyContent: "center"}}>
@@ -30,10 +34,11 @@ export default function ChatList() {
                         key={id}
                         disableGutters
                         secondaryAction={
-                            <IconButton>
+                            <IconButton >
                                 <Avatar src="/broken-image.jpg"/>
                             </IconButton>
                         }
+
                     >
                         <Link href={`/chats/${id}`} underline="hover">
                             <ListItemText primary={`Chat with ${chatUser}`}/>
@@ -46,7 +51,7 @@ export default function ChatList() {
         </span>
             <Dialog open={visible} onClose={handleClose}>
                 <DialogTitle>A name for new chat</DialogTitle>
-                <TextField value={newChatName} onChange={handleChange} autoFocus/>
+                <TextField value={newChatName} onChange={handleChange}/>
                 <Button onClick={onAddChat} disabled={!newChatName}>
                     Submit
                 </Button>

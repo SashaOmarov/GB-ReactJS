@@ -7,26 +7,27 @@ import ChatList from "./components/ChatList";
 import ChatView from "./components/ChatView";
 import Layout from "./components/Layout";
 import {Provider} from "react-redux";
-import store from "./store";
+import store, {persistor} from "./store";
+import {PersistGate} from "redux-persist/integration/react";
 
 function App() {
     return (
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo"/>
-                <p>
-                    My home work 6
-                </p>
+                <p>My home work 7</p>
             </header>
             <Provider store={store}>
-                <Routes>
-                    <Route path="/" element={<Layout/>}>
-                        <Route index element={<ChatList/>}/>
-                        <Route path="profile" element={<Profile/>}/>
-                        <Route path="/chats/:chatId" element={<ChatView/>}/>
-                        <Route path="*" element={<NoMatch/>}/>
-                    </Route>
-                </Routes>
+                <PersistGate persistor={persistor}>
+                    <Routes>
+                        <Route path="/" element={<Layout/>}>
+                            <Route index element={<ChatList/>}/>
+                            <Route path="profile" element={<Profile/>}/>
+                            <Route path="/chats/:chatId" element={<ChatView/>}/>
+                            <Route path="*" element={<NoMatch/>}/>
+                        </Route>
+                    </Routes>
+                </PersistGate>
             </Provider>
         </div>
     );

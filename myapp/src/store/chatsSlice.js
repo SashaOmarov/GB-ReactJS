@@ -21,12 +21,7 @@ const chatsSlice = createSlice({
         },
         delChat: {
             reducer: (state, action) => {
-                state.value = (action.payload)
-            },
-            prepare: (id) => {
-                let newChats = [...this.state.value];
-                newChats = newChats.filter((item) => item.id !== id);
-                return {payload: {newChats}}
+                state.filter(item => item.id !== action.payload)
             }
         }
 

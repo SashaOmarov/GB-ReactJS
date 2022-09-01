@@ -4,10 +4,10 @@ export default function NoMatch() {
     return (
         <>
             <main>
-                <h2>Тут ничего нет</h2>
+                <h2>No match</h2>
             </main>
             <nav>
-                <Link to="/profile">Профиль</Link>
+                <Link to="/profile">Profile</Link>
             </nav>
         </>
     );

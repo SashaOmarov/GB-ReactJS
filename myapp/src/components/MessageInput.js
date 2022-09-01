@@ -7,7 +7,7 @@ const MessageInput = props => {
     const [msgText, setMsgText] = useState('');
     const [fromUser, setFromUser] = useState('');
     const [toUser, setToUser] = useState(props.toUser);
-    const {chatId} = useParams();
+    const  {chatId}  = useParams();
 
     return (
         <div className={'App-form'}>

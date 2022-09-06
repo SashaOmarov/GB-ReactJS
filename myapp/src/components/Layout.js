@@ -13,6 +13,9 @@ export default function Layout() {
                     <li>
                         <Link to="profile">Profile</Link>
                     </li>
+                    <li>
+                        <Link to="todo">APIToDo</Link>
+                    </li>
                 </ul>
             </nav>
 

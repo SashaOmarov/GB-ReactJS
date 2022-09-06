@@ -9,13 +9,16 @@ import Layout from "./components/Layout";
 import {Provider} from "react-redux";
 import store, {persistor} from "./store";
 import {PersistGate} from "redux-persist/integration/react";
+import {ToDo} from "./components/ToDo";
+
+
 
 function App() {
     return (
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo"/>
-                <p>My home work 7</p>
+                <p>My home work 8</p>
             </header>
             <Provider store={store}>
                 <PersistGate persistor={persistor}>
@@ -24,6 +27,7 @@ function App() {
                             <Route index element={<ChatList/>}/>
                             <Route path="profile" element={<Profile/>}/>
                             <Route path="/chats/:chatId" element={<ChatView/>}/>
+                            <Route path="todo" element={<ToDo/>}/>
                             <Route path="*" element={<NoMatch/>}/>
                         </Route>
                     </Routes>

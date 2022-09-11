@@ -63,7 +63,6 @@
 .chat-add {
   font-size: calc(10px + 2vmin);
   color: #173f8d;
-  cursor: pointer;
 }
 
 li {
